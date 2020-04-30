@@ -1,4 +1,4 @@
 # AD340 -5210
 # Loan Pham 
 
-Creating Hello world on Mobile app for beginner.
+Creating simple button and zipcode and checking zipcode on mobile app
