@@ -13,7 +13,7 @@ class ForecastRepository {
     fun loadForecast(zipcode: String) {
         val randomValues = List(10) { Random.nextFloat().rem(100)*100}
         val forecastItems = randomValues.map { temp ->
-            DailyForecast(temp, "Party Cloudy")
+            DailyForecast(temp, getTempDescription(temp))
         }
         _weeklyForecast.setValue(forecastItems)
     }
@@ -26,6 +26,8 @@ class ForecastRepository {
             in 55f.rangeTo(65f) -> "Getting better"
             in 65f.rangeTo(88f) -> "That's the sweet spot"
             in 88f.rangeTo(98f) -> "Getting a little warm"
+            in 98f.rangeTo(100f) -> "Where's the A/C?"
+            in 100f.rangeTo(Float.MAX_VALUE) -> "What is this, Arizona?"
             else -> "Does not compute"
         }
 
